@@ -1,0 +1,80 @@
+name: Build Spider-Man DE
+
+on:
+  push:
+    branches: [ "main", "arena/**" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  validate-and-build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: package.json
+
+      - name: Install Pillow (for texture gen check if needed)
+        run: |
+          python3 -c "import PIL" || pip install Pillow --break-system-packages
+
+      - name: JSON syntax check
+        run: |
+          echo "→ Checking JSONs..."
+          find . -name "*.json" -not -path "./dist/*" -not -path "./.git/*" -exec python3 -m json.tool {} \; > /dev/null
+          echo "✓ All JSON parse"
+
+      - name: Validate manifests and pack integrity
+        run: node tools/validate.js
+
+      - name: Run unit tests
+        run: node tests/unit.test.js
+
+      - name: Build .mcaddon
+        run: node tools/build.js
+
+      - name: Verify artifact exists
+        run: |
+          ls -lh dist/*.mcaddon
+          ls -lh dist/*.mcpack
+          unzip -l dist/*.mcaddon | head -n 100
+          unzip -l dist/*.mcaddon | grep -q "behavior_pack/manifest.json"
+          unzip -l dist/*.mcaddon | grep -q "resource_pack/manifest.json"
+          echo "✓ Artifact verified"
+
+      - name: Upload mcaddon artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SPIDER_MAN_DE-mcaddon
+          path: dist/*.mcaddon
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload mcpacks
+        uses: actions/upload-artifact@v4
+        with:
+          name: SPIDER_MAN_DE-mcpacks
+          path: dist/*.mcpack
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Summary
+        run: |
+          echo "### Build Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Validation, unit tests and .mcaddon build passed." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Artifact:** SPIDER_MAN_DE_v1.0.0.mcaddon" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          ls -lh dist/ >> $GITHUB_STEP_SUMMARY
