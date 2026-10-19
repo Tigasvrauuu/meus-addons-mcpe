@@ -1,0 +1,12 @@
+item.spawn_egg.entity.spider:thug.name=Bandido de Rua
+item.spawn_egg.entity.spider:brute.name=Brutamontes
+item.spawn_egg.entity.spider:elite.name=Oponente Elite
+item.spider:web_shooter.name=Lançador de Teia
+item.spider:impact_web.name=Teia de Impacto
+item.spider:web_restraint.name=Cápsula de Contenção
+item.spider:zip_device.name=Módulo de Salto de Teia
+item.spider:tech_pulse.name=Emissor de Pulso Tecnológico
+item.spider:threat_scanner.name=Scanner de Ameaças
+item.spider:suit_changer.name=Remoto do Fabricador de Trajes
+item.spider:spider_token.name=Ficha-Aranha
+tile.spider:suit_station.name=Estação Fabricadora de Trajes

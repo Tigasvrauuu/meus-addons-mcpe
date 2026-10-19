@@ -1,0 +1,17 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "spider:suit_station" },
+    "tags": ["crafting_table"],
+    "pattern": ["IRI", "CSC", "OBO"],
+    "key": {
+      "I": { "item": "minecraft:iron_ingot" },
+      "R": { "item": "minecraft:redstone" },
+      "C": { "item": "minecraft:copper_ingot" },
+      "S": { "item": "minecraft:smithing_table" },
+      "O": { "item": "minecraft:obsidian" },
+      "B": { "item": "minecraft:blue_dye" }
+    },
+    "result": { "item": "spider:suit_station", "count": 1 }
+  }
+}

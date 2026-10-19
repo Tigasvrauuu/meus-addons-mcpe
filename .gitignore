@@ -1,0 +1,11 @@
+# Build artifacts temp
+dist/tmp_build/
+# OS
+.DS_Store
+Thumbs.db
+# Node
+node_modules/
+npm-debug.log*
+# IDE
+.vscode/
+.idea/

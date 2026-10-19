@@ -1,0 +1,8 @@
+{
+  "format_version": "1.14.0",
+  "sound_definitions": {
+    "spider.web_shoot": { "category": "player", "sounds": ["sounds/web_shoot"] },
+    "spider.web_release": { "category": "player", "sounds": ["sounds/web_release"] },
+    "spider.sense_ping": { "category": "player", "sounds": ["sounds/sense_ping"] }
+  }
+}

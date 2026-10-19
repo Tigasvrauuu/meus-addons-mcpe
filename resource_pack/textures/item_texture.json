@@ -1,0 +1,14 @@
+{
+  "resource_pack_name": "Spider-DE",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "web_shooter": { "textures": "textures/items/web_shooter" },
+    "impact_web": { "textures": "textures/items/impact_web" },
+    "web_restraint": { "textures": "textures/items/web_restraint" },
+    "zip_device": { "textures": "textures/items/zip_device" },
+    "tech_pulse": { "textures": "textures/items/tech_pulse" },
+    "threat_scanner": { "textures": "textures/items/threat_scanner" },
+    "suit_changer": { "textures": "textures/items/suit_changer" },
+    "spider_token": { "textures": "textures/items/spider_token" }
+  }
+}

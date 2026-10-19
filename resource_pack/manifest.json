@@ -1,0 +1,23 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Spider-Man: Definitive Experience [RP]",
+    "description": "Vanilla-plus textures, models, particles, sounds and UI for Spider-Man DE. v1.0.0 - Target MC Bedrock 26.52",
+    "uuid": "c538f8d4-8bbf-4544-a80d-1baed3c9b317",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 60]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "2e710acf-578b-4ecc-b5be-e4429e30ef9d",
+      "version": [1, 0, 0]
+    }
+  ],
+  "capabilities": [],
+  "metadata": {
+    "authors": ["Spider-Man DE Team"],
+    "license": "Custom - Fan-made original assets",
+    "url": "https://github.com/Tigasvrauuu/meus-addons-mcpe"
+  }
+}

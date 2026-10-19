@@ -1,0 +1,13 @@
+{
+  "format_version": "1.20.50",
+  "minecraft:item": {
+    "description": { "identifier": "spider:zip_device", "menu_category": { "category": "equipment" } },
+    "components": {
+      "minecraft:icon": { "texture": "zip_device" },
+      "minecraft:display_name": { "value": "Web-Zip Module" },
+      "minecraft:max_stack_size": 1,
+      "minecraft:hand_equipped": false,
+      "minecraft:use_duration": 10
+    }
+  }
+}

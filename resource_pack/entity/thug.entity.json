@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "spider:thug",
+      "materials": { "default": "entity_alphatest" },
+      "textures": { "default": "textures/entity/thug" },
+      "geometry": { "default": "geometry.humanoid.custom" },
+      "render_controllers": ["controller.render.humanoid"],
+      "spawn_egg": { "base_color": "#5a2a2a", "overlay_color": "#c03030" }
+    }
+  }
+}

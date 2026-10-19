@@ -1,0 +1,13 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "spider:spider_token_conversion" },
+    "tags": ["crafting_table"],
+    "pattern": ["SSS", "SDS", "SSS"],
+    "key": {
+      "S": { "item": "minecraft:string" },
+      "D": { "item": "minecraft:diamond" }
+    },
+    "result": { "item": "spider:spider_token", "count": 2 }
+  }
+}

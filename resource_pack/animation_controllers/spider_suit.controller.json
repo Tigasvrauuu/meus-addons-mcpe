@@ -1,0 +1,22 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.spider_suit": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [{ "swinging": "query.has_tag('spider_swinging')" }, { "climbing": "query.has_tag('spider_climbing')" }],
+          "animations": ["base_pose"]
+        },
+        "swinging": {
+          "transitions": [{ "default": "!query.has_tag('spider_swinging')" }],
+          "animations": ["swinging_pose"]
+        },
+        "climbing": {
+          "transitions": [{ "default": "!query.has_tag('spider_climbing')" }],
+          "animations": ["climbing_pose"]
+        }
+      }
+    }
+  }
+}

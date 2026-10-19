@@ -1,0 +1,60 @@
+{
+  "format_version": "1.20.50",
+  "minecraft:block": {
+    "description": {
+      "identifier": "spider:suit_station",
+      "menu_category": {
+        "category": "items",
+        "group": "itemGroup.name.stations"
+      },
+      "traits": {
+        "minecraft:placement_direction": {
+          "enabled_states": [
+            "minecraft:cardinal_direction"
+          ],
+          "y_rotation_offset": 180
+        }
+      },
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 3
+      },
+      "minecraft:destroy_time": 3,
+      "minecraft:explosion_resistance": 6,
+      "minecraft:friction": 0.6,
+      "minecraft:flammable": false,
+      "minecraft:light_emission": 6,
+      "minecraft:map_color": "#1a3a8a",
+      "minecraft:display_name": "Suit Fabricator Station",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "suit_station",
+          "render_method": "opaque"
+        },
+        "up": {
+          "texture": "suit_station_top",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:geometry": "minecraft:geometry.full_block",
+      "minecraft:collision_box": true,
+      "minecraft:selection_box": true
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

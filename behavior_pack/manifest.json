@@ -1,0 +1,44 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Spider-Man: Definitive Experience [BP]",
+    "description": "Core gameplay systems for Spider-Man traversal, combat, gadgets, suits and progression. v1.0.0 - Target MC Bedrock 26.52",
+    "uuid": "8746801d-4a42-4d1c-96c2-ea30ff5add4f",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 60]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "0a2caf58-acf8-4cf5-be07-aef81373ff61",
+      "version": [1, 0, 0]
+    },
+    {
+      "type": "script",
+      "language": "javascript",
+      "uuid": "220adfee-2342-4cd6-81bd-cbd735820bba",
+      "version": [1, 0, 0],
+      "entry": "scripts/main.js"
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "c538f8d4-8bbf-4544-a80d-1baed3c9b317",
+      "version": [1, 0, 0]
+    },
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.16.0"
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": "1.4.0"
+    }
+  ],
+  "capabilities": [],
+  "metadata": {
+    "authors": ["Spider-Man DE Team"],
+    "license": "Custom - Fan-made original assets",
+    "url": "https://github.com/Tigasvrauuu/meus-addons-mcpe"
+  }
+}

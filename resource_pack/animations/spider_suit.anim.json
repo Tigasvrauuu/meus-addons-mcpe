@@ -1,0 +1,26 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.player.base_pose": {
+      "loop": true,
+      "bones": {
+        "rightArm": { "rotation": [0, 0, 0] },
+        "leftArm": { "rotation": [0, 0, 0] }
+      }
+    },
+    "animation.player.swinging_pose": {
+      "loop": true,
+      "bones": {
+        "rightArm": { "rotation": [-55, 0, 15] },
+        "leftArm": { "rotation": [-55, 0, -15] }
+      }
+    },
+    "animation.player.climbing_pose": {
+      "loop": true,
+      "bones": {
+        "rightArm": { "rotation": [-25, 0, 10] },
+        "leftArm": { "rotation": [-25, 0, -10] }
+      }
+    }
+  }
+}

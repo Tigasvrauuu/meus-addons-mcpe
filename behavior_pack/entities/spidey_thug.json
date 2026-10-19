@@ -1,0 +1,45 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "spider:thug",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "spider:thug_adult": {
+        "minecraft:health": { "value": 24, "max": 24 },
+        "minecraft:movement": { "value": 0.32 },
+        "minecraft:attack": { "damage": 5 },
+        "minecraft:collision_box": { "width": 0.6, "height": 1.8 },
+        "minecraft:physics": {},
+        "minecraft:pushable": { "is_pushable": true, "is_pushable_by_piston": true },
+        "minecraft:follow_range": { "value": 32, "max": 64 },
+        "minecraft:damage_sensor": { "cause": "fall", "deals_damage": false },
+        "minecraft:behavior.melee_attack": { "priority": 3 },
+        "minecraft:behavior.nearest_attackable_target": { "priority": 2, "must_see": false, "reselect_targets": true, "within_radius": 25, "entity_types": [{ "filters": { "test": "is_family", "subject": "other", "value": "player" }, "max_dist": 35 }] },
+        "minecraft:behavior.hurt_by_target": { "priority": 1 },
+        "minecraft:behavior.look_at_player": { "priority": 7, "look_distance": 8 },
+        "minecraft:behavior.random_stroll": { "priority": 5, "speed_multiplier": 0.8 },
+        "minecraft:behavior.random_look_around": { "priority": 6 }
+      },
+      "spider:webbed": {
+        "minecraft:movement": { "value": 0.02 },
+        "minecraft:variant": { "value": 1 }
+      }
+    },
+    "components": {
+      "minecraft:type_family": { "family": ["mob", "hostile", "spider_enemy"] },
+      "minecraft:breathable": { "total_supply": 15, "suffocation_time": 0 },
+      "minecraft:nameable": { "allow_name_tag_renaming": true, "always_show": false },
+      "minecraft:loot": { "table": "loot_tables/entities/thug.json" },
+      "minecraft:experience_reward": { "on_death": "query.last_hit_by_player ? 5 : 0" }
+    },
+    "events": {
+      "minecraft:entity_spawned": { "add": { "component_groups": ["spider:thug_adult"] } },
+      "spider:webbed_start": { "add": { "component_groups": ["spider:webbed"] } },
+      "spider:webbed_end": { "remove": { "component_groups": ["spider:webbed"] } }
+    }
+  }
+}

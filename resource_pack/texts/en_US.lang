@@ -1,0 +1,20 @@
+## Spider-Man DE - Localization
+
+item.spawn_egg.entity.spider:thug.name=Street Thug
+item.spawn_egg.entity.spider:brute.name=Brute Enforcer
+item.spawn_egg.entity.spider:elite.name=Elite Opponent
+
+item.spider:web_shooter.name=Web-Shooter
+item.spider:impact_web.name=Impact Web
+item.spider:web_restraint.name=Web Restraint Capsule
+item.spider:zip_device.name=Web-Zip Module
+item.spider:tech_pulse.name=Tech Pulse Emitter
+item.spider:threat_scanner.name=Threat Scanner
+item.spider:suit_changer.name=Suit Fabricator Remote
+item.spider:spider_token.name=Spider-Token
+tile.spider:suit_station.name=Suit Fabricator Station
+
+action.hint.web_shooter=Use to fire web. Use again to release.
+action.hint.climb=Sneak near wall to cling. Look up/down to move. Jump to leap.
+spider.menu.title=Spider-Man Hub
+spider.sense.alert=Spider-Sense!

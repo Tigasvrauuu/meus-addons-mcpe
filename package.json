@@ -1,0 +1,11 @@
+{
+  "name": "spider-man-definitive-experience",
+  "version": "1.0.0",
+  "description": "Spider-Man: Definitive Experience — MC Bedrock 26.52",
+  "type": "module",
+  "scripts": {
+    "validate": "node tools/validate.js",
+    "build": "node tools/build.js",
+    "test": "node tests/unit.test.js"
+  }
+}

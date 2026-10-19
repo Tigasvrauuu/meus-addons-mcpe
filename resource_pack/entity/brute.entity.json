@@ -1,0 +1,24 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "spider:brute",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/brute"
+      },
+      "geometry": {
+        "default": "geometry.humanoid.custom"
+      },
+      "render_controllers": [
+        "controller.render.humanoid"
+      ],
+      "spawn_egg": {
+        "base_color": "#2a3a5a",
+        "overlay_color": "#c03030"
+      }
+    }
+  }
+}
