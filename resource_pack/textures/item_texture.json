@@ -1,0 +1,36 @@
+{
+  "resource_pack_name": "spider_definitive",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "suit_classic": {
+      "textures": "textures/items/suit_classic"
+    },
+    "suit_homemade": {
+      "textures": "textures/items/suit_homemade"
+    },
+    "suit_stealth": {
+      "textures": "textures/items/suit_stealth"
+    },
+    "suit_tech": {
+      "textures": "textures/items/suit_tech"
+    },
+    "suit_urban": {
+      "textures": "textures/items/suit_urban"
+    },
+    "suit_iron": {
+      "textures": "textures/items/suit_iron"
+    },
+    "web_shooter": {
+      "textures": "textures/items/web_shooter"
+    },
+    "wall_grip": {
+      "textures": "textures/items/wall_grip"
+    },
+    "gadget": {
+      "textures": "textures/items/gadget"
+    },
+    "console": {
+      "textures": "textures/items/console"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "spider:suit_urban",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "item.spider:suit_urban.name"
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "suit_urban"
+        }
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:hand_equipped": true,
+      "minecraft:wearable": {
+        "slot": "slot.armor.chest",
+        "protection": 3
+      }
+    }
+  }
+}

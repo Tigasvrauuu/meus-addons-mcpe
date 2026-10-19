@@ -1,0 +1,4 @@
+node_modules/
+dist/
+behavior_pack/scripts/
+__pycache__/
