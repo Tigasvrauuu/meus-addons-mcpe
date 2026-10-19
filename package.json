@@ -1,0 +1,19 @@
+{
+  "name": "meus-addons-mcpe",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Spider-Man: Definitive Experience - Minecraft Bedrock 26.52 add-on (behavior + resource packs).",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "assets": "python3 tools/generate_assets.py",
+    "check": "node tools/check_syntax.mjs",
+    "test": "node --test tests/*.test.js",
+    "validate": "python3 tools/validate_packs.py",
+    "build": "python3 tools/build_mcaddon.py",
+    "all": "npm run check && npm test && npm run validate && npm run build"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

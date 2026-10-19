@@ -1,0 +1,12 @@
+# Build outputs (the .mcaddon is produced by GitHub Actions / tools/build_mcaddon.py)
+dist/
+*.mcaddon
+*.mcpack
+*.zip
+
+# Tooling
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+*.log

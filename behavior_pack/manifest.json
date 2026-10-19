@@ -1,0 +1,44 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Spider-Man: Definitive Experience (Behavior)",
+    "description": "Web-shooter swinging, wall clinging, gadgets, Spider-Sense, suits and progression for Minecraft Bedrock 26.52.",
+    "uuid": "aec2da8d-b260-4389-8b55-f8454a320d87",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 26, 52]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "14e7e7e4-83f9-4008-97f1-13ee9c3d3acf",
+      "version": [1, 0, 0]
+    },
+    {
+      "type": "script",
+      "language": "javascript",
+      "uuid": "31fec55c-5ce6-4ef1-8f6f-36f8e644e3c0",
+      "entry": "scripts/main.js",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "e592b061-88ac-4189-a14b-bc6e52cf1006",
+      "version": [1, 0, 0]
+    },
+    {
+      "module_name": "@minecraft/server",
+      "version": "2.11.0-beta.1.26.52-stable"
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": "2.3.0-beta.1.26.52-stable"
+    }
+  ],
+  "metadata": {
+    "authors": ["Tigasvrauuu"],
+    "generated_with": {
+      "tools": ["Spider-Man Definitive Experience build scripts"]
+    }
+  }
+}
