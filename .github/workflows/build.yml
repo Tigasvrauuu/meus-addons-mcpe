@@ -1,0 +1,89 @@
+name: Build Spider-Man add-on
+
+on:
+  push:
+    branches: ["**"]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Check, test, validate and package
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Syntax-check every script module
+        run: npm run check
+
+      - name: Run unit tests for the pure gameplay logic
+        run: npm test
+
+      - name: Validate manifests, UUIDs, references and assets
+        run: npm run validate
+
+      - name: Build the .mcaddon package
+        run: python3 tools/build_mcaddon.py
+
+      - name: Confirm the tag matches the pack version
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          version="$(python3 -c 'import json;print(".".join(map(str,json.load(open("behavior_pack/manifest.json"))["header"]["version"])))')"
+          if [ "v${version}" != "${GITHUB_REF_NAME}" ]; then
+            echo "Tag ${GITHUB_REF_NAME} does not match manifest version ${version}" >&2
+            exit 1
+          fi
+
+      - name: Upload the .mcaddon artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SpiderMan-Definitive-Experience-mcaddon
+          path: dist/*.mcaddon
+          if-no-files-found: error
+          retention-days: 30
+
+  release:
+    name: Publish GitHub release
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Download the .mcaddon artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: SpiderMan-Definitive-Experience-mcaddon
+          path: dist
+
+      - name: Create the release with the package attached
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" dist/*.mcaddon \
+            --title "Spider-Man: Definitive Experience ${GITHUB_REF_NAME}" \
+            --notes-file CHANGELOG.md \
+            --verify-tag
