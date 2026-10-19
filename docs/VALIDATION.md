@@ -28,3 +28,11 @@ The build checks are repeatable in `.github/workflows/build.yml`; every push and
 ## Scope of evidence
 
 Static validation is **not** full Bedrock schema validation. Numerical tests cannot prove collision-constrained physics, mobile feel, item event delivery or visual correctness. No game process, world import, screenshot, client Content Log, Realms session or dedicated server was available. All those remain unverified.
+
+## GitHub Actions delivery blocker
+
+The implementation was committed locally on the session branch. The push was attempted using `git push origin arena/eb62ae4e-meus-addons-mcpe`, but GitHub rejected it with:
+
+> refusing to allow a GitHub App to create or update workflow `.github/workflows/build.yml` without `workflows` permission
+
+Therefore **no remote Actions run or remote artifact upload is claimed**. The workflow is ready locally and the local `.mcaddon` is built. The GitHub connection must be reconnected with workflow access before pushing and running CI. No permission-bypass workaround was attempted.
