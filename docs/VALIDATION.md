@@ -37,7 +37,7 @@ unit tests → `build.js` → uploads the `.mcaddon` + validation report.
 | Custom enemies (5 + projectile) | Implemented | Static-validated (entity JSON ↔ client entity ↔ geometry/texture/loot/spawn eggs); behavior Not runtime-verified |
 | Suit Station block | Implemented | Static-validated (block JSON, terrain atlas, recipe); interaction Not runtime-verified |
 | Recipes (10) | Implemented | Static-validated (results/ingredients exist); crafting Not runtime-verified |
-| Textures / models / particles | Implemented | Generated deterministically by `tools/texture_gen.py`; existence static-validated; visual QA Not runtime-verified (pixel-reviewed only) |
+| Textures / models / particles | Implemented | Generated deterministically by `tools/texture_gen.py` (v2 HD 4× pass: 64² items, 256² skins, 512² icons, supersampled AA); existence static-validated; visual QA Not runtime-verified (pixel-reviewed only) |
 | Sounds | Implemented (vanilla IDs only) | Static-validated against a verified ID list; **no custom sound files (Incomplete by design, documented)** |
 | Camera shake on 1.26.50+ | Implemented (feature-guarded) | Guard verified against d.ts (2.10 API); runtime Not runtime-verified |
 | Boss fight | **Not implemented (deferred)** | Deliberate scope decision: v1.0.0 ships the framework (spawner hook + challenge events) without a boss entity. Documented in CHANGELOG. |

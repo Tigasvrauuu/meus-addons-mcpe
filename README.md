@@ -92,7 +92,9 @@ manual's Settings page.
 - **UI (P1):** HUD action-bar line + toasts, main menu, settings modal,
   station menu — index-routed forms with cancel/UserBusy handling.
 - **Content:** Suit Station block, 10 crafting recipes, loot tables,
-  spawn eggs, pt-BR + en-US texts, procedurally generated original textures.
+  spawn eggs, pt-BR + en-US texts, and a fully original **HD procedural
+  texture set** (4× pass: 64² items/eggs/block faces, 32²/64² particles,
+  256² entity skins, 512² pack icons — gradients, lighting, glows, AA).
 
 ## Repository layout
 

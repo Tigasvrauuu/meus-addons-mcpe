@@ -1,0 +1,66 @@
+# GitHub Actions — validate, unit-test and package the add-on (spec §26).
+#
+# Pipeline: textures (procedural, deterministic) → static validation →
+# unit tests (pure modules) → .mcaddon build → artifacts.
+# The .mcaddon is produced ONLY in CI / local `npm run build`; dist/ is
+# git-ignored and never committed.
+
+name: build-addon
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: build-addon-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify-and-build:
+    name: Validate, test and package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Setup Python (texture generator)
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Pillow
+        run: python3 -m pip install --disable-pip-version-check pillow
+
+      - name: Generate textures (deterministic pixel art)
+        run: python3 tools/texture_gen.py
+
+      - name: Static validation (manifests, UUIDs, cross-refs, syntax)
+        run: node tools/validate.js --report reports/validation-report.txt
+
+      - name: Unit tests (pure modules)
+        run: node --test tests/*.test.js
+
+      - name: Build .mcaddon
+        run: node tools/build.js
+
+      - name: Upload .mcaddon artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: spider-man-definitive-experience-mcaddon
+          path: dist/*.mcaddon
+          if-no-files-found: error
+
+      - name: Upload validation report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: validation-report
+          path: reports/validation-report.txt
+          if-no-files-found: ignore
