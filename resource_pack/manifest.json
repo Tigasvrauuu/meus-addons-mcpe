@@ -1,0 +1,18 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Spider-Man: Definitive Experience [RP]",
+    "description": "Suits, enemy visuals, particles, icons and localization for Spider-Man: Definitive Experience. Fan-made add-on (original assets).",
+    "uuid": "78aac3e7-c416-4c0f-bfbc-8c571fcc8853",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 26, 40]
+  },
+  "modules": [
+    {
+      "description": "Spider-Man: Definitive Experience resources (textures, models, animations, particles, texts)",
+      "type": "resources",
+      "uuid": "7962b6f9-c9ca-4827-9c5a-8030f3b562fa",
+      "version": [1, 0, 0]
+    }
+  ]
+}

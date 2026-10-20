@@ -1,0 +1,21 @@
+# Build outputs (produced by `npm run build` / GitHub Actions)
+dist/
+*.mcaddon
+*.mcpack
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Python
+__pycache__/
+*.pyc
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Validation/build reports (CI + local)
+reports/

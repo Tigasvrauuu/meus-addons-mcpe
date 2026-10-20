@@ -1,0 +1,36 @@
+{
+  "format_version": "1.21.80",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "smx:suit_improvised"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "S S",
+      "RLR",
+      "S S"
+    ],
+    "key": {
+      "S": {
+        "item": "minecraft:string"
+      },
+      "R": {
+        "item": "minecraft:red_dye"
+      },
+      "L": {
+        "item": "minecraft:leather_chestplate"
+      }
+    },
+    "result": {
+      "item": "smx:suit_improvised",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "minecraft:leather_chestplate"
+      }
+    ]
+  }
+}

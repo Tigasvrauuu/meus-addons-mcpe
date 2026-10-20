@@ -1,0 +1,26 @@
+{
+  "format_version": "1.26.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "smx:bullet",
+      "min_engine_version": "1.26.40",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/bullet"
+      },
+      "geometry": {
+        "default": "geometry.smx.bullet"
+      },
+      "scripts": {
+        "pre_animation": [],
+        "animate": []
+      },
+      "animations": {},
+      "render_controllers": [
+        "controller.render.smx.humanoid"
+      ]
+    }
+  }
+}

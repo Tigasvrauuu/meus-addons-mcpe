@@ -1,0 +1,50 @@
+{
+  "format_version": "1.26.40",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "smx:bullet",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {},
+    "components": {
+      "minecraft:projectile": {
+        "on_hit": {
+          "impact_damage": {
+            "damage": 3,
+            "knockback": true
+          },
+          "remove_on_hit": {}
+        },
+        "power": 1.5,
+        "gravity": 0.05,
+        "anchor": 1,
+        "should_bounce": false,
+        "offset": [
+          0,
+          0.35,
+          0
+        ],
+        "hit_sound": "block.bowhit"
+      },
+      "minecraft:physics": {},
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 100.0,
+          "max_dropped_ticks": 5,
+          "use_motion_prediction": true
+        }
+      }
+    },
+    "events": {}
+  }
+}

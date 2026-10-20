@@ -1,0 +1,24 @@
+{
+  "format_version": "1.26.30",
+  "minecraft:item": {
+    "description": {
+      "identifier": "smx:tech_pulse",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "smx_tech_pulse"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.smx:tech_pulse.name"
+      },
+      "minecraft:max_stack_size": {
+        "value": 1
+      }
+    }
+  }
+}

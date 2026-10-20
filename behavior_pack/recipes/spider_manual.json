@@ -1,0 +1,32 @@
+{
+  "format_version": "1.21.80",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "smx:spider_manual"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "S",
+      "B"
+    ],
+    "key": {
+      "S": {
+        "item": "minecraft:string"
+      },
+      "B": {
+        "item": "minecraft:book"
+      }
+    },
+    "result": {
+      "item": "smx:spider_manual",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "minecraft:book"
+      }
+    ]
+  }
+}
