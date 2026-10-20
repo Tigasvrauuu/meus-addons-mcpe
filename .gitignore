@@ -2,3 +2,5 @@ node_modules/
 dist/
 behavior_pack/scripts/
 __pycache__/
+
+website/public/*.mcaddon

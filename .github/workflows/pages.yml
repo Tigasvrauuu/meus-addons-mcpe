@@ -1,0 +1,52 @@
+name: Deploy React Landing Page
+on:
+  push:
+    paths:
+      - 'website/**'
+      - 'src/**'
+      - 'behavior_pack/**'
+      - 'resource_pack/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: landing-pages
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            website/package-lock.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - run: npm run ci
+      - run: cp dist/Spider-Man-Definitive-Experience-1.0.0.mcaddon website/public/
+      - run: npm ci --prefix website
+      - run: npm test --prefix website
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: website/dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish landing page
+        id: deployment
+        uses: actions/deploy-pages@v4
