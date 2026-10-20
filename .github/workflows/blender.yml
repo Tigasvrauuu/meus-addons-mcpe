@@ -1,0 +1,30 @@
+name: Blender Headless Verification
+on:
+  push:
+    paths:
+      - '.github/workflows/blender.yml'
+      - 'tools/blender_smoke.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  headless:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      OMP_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Blender and native dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y blender
+          blender --version
+      - name: Save and render a real scene without a window
+        run: blender --background --factory-startup --threads 2 --python-exit-code 1 --python tools/blender_smoke.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Blender-Headless-Smoke-Test
+          path: dist/blender-smoke/
+          if-no-files-found: error
+          retention-days: 14
