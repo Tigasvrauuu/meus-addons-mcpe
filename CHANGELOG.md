@@ -1,0 +1,52 @@
+# Changelog
+
+All notable changes to **Spider-Man: Definitive Experience** are documented
+here. Format follows Keep a Changelog; versioning is semantic.
+
+## [1.0.0] — 2026-10-20
+
+First complete release ("make it fine" milestone).
+
+### Added
+- **Traversal:** momentum pendulum web-swing (anchor raycast, rope constraint,
+  pump/reel inputs, capped release + launch), web-zip, auto wall-climb with
+  safe detach (jump/sneak/leap), bounded post-release web-glide.
+- **Gadgets:** Web Shooter, Impact Web, Restraint Web (light/heavy/immune
+  classes), Web Pull (zip or bounded entity pull), Tech Pulse (radial
+  disrupt), Threat Scanner (deliberate scan window). Unified registry,
+  timestamp cooldowns mirrored to the vanilla item cooldown bar.
+- **Spider-Sense:** bounded proximity scan with severity tiers, cooldown-gated
+  HUD arrows/pings, hurt-ping, optional camera shake (feature-detected on
+  `@minecraft/server` ≥ 2.10 / game ≥ 1.26.50).
+- **Combat:** suit-scaled melee with combo window; restraint registry with
+  drop-on-death and leave cleanup.
+- **Suits:** 6 original suits (Improvised, Classic, Stealth, Advanced, Urban,
+  Iron-armor-inspired) — unique procedurally generated textures, protection/
+  durability tiers, passive modifiers, worn visuals via chestplate attachables.
+- **Enemies:** Street Thug, Alley Gunner (ranged), Dock Brute, Shadow Runner,
+  The Enforcer + web-bullet projectile; night spawn rules for thug/gunner
+  only; loot tables; spawn eggs.
+- **Progression:** 8 challenges with one-time claimable rewards, records and
+  lifetime stats; progression bus decouples systems from challenge logic.
+- **Persistence:** versioned per-player saves in dynamic properties with
+  field-by-field corruption repair; throttled writes; save on leave.
+- **UI:** HUD actionbar + toasts, Spider Manual menu, settings modal,
+  Suit Station combined menu (suits/shop/sparring/challenges).
+- **Content:** Suit Station block, 10 recipes, starter kit on first join,
+  en-US + pt-BR texts, pack icons.
+- **Tooling:** `tools/texture_gen.py` (deterministic original pixel art),
+  `tools/validate.js` (345+ static checks), `tools/build.js` (dependency-free
+  reproducible `.mcaddon` zip), Node unit tests (48 cases), GitHub Actions
+  pipeline producing the `.mcaddon` + validation report artifacts.
+
+### Known limitations at 1.0.0
+- No in-game verification yet (CI has no Minecraft) — see docs/VALIDATION.md.
+- No custom audio files: vanilla sound IDs only (no sound_definitions).
+- **Boss fight deferred** by scope decision: enemy framework (spawner hook,
+  challenge events, elite class) exists; a named boss entity is future work.
+- Suit visuals constrained to the vanilla player rig via attachables.
+
+## [0.1.0] — internal
+- Repository scaffolding, spec study, API ground-truth extraction
+  (`@minecraft/server` 2.9.0 / `@minecraft/server-ui` 2.1.0 d.ts), format
+  decisions (min engine 1.26.40, no experiments).

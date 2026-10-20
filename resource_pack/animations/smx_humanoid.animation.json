@@ -1,0 +1,38 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.smx.humanoid": {
+      "loop": true,
+      "bones": {
+        "rightLeg": {
+          "rotation": [
+            "math.cos(query.modified_distance_moved * 38.17) * 80.0 * query.modified_move_speed",
+            0,
+            0
+          ]
+        },
+        "leftLeg": {
+          "rotation": [
+            "-math.cos(query.modified_distance_moved * 38.17) * 80.0 * query.modified_move_speed",
+            0,
+            0
+          ]
+        },
+        "rightArm": {
+          "rotation": [
+            "query.attack_time > 0.0 ? (20.0 - math.sin(query.attack_time * 360.0) * 130.0) : (-math.cos(query.modified_distance_moved * 38.17) * 60.0 * query.modified_move_speed)",
+            0,
+            0
+          ]
+        },
+        "leftArm": {
+          "rotation": [
+            "query.attack_time > 0.0 ? (-20.0 + math.sin(query.attack_time * 360.0) * 40.0) : (math.cos(query.modified_distance_moved * 38.17) * 60.0 * query.modified_move_speed)",
+            0,
+            0
+          ]
+        }
+      }
+    }
+  }
+}

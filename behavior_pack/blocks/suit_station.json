@@ -1,0 +1,38 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:block": {
+    "description": {
+      "identifier": "smx:suit_station",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:geometry": "minecraft:geometry.full_block",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "smx_station_side",
+          "render_method": "opaque"
+        },
+        "up": {
+          "texture": "smx_station_top",
+          "render_method": "opaque"
+        },
+        "down": {
+          "texture": "smx_station_side",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1.5
+      },
+      "minecraft:destructible_by_explosion": {
+        "blast_resistance": 6
+      },
+      "minecraft:light_emission": 7,
+      "minecraft:light_dampening": 15,
+      "minecraft:map_color": "#A31621",
+      "minecraft:friction": 0.6
+    }
+  }
+}

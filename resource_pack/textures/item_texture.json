@@ -1,0 +1,60 @@
+{
+  "resource_pack_name": "smx",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "smx_web_shooter": {
+      "textures": "textures/items/web_shooter"
+    },
+    "smx_impact_web": {
+      "textures": "textures/items/impact_web"
+    },
+    "smx_restraint_web": {
+      "textures": "textures/items/restraint_web"
+    },
+    "smx_web_pull": {
+      "textures": "textures/items/web_pull"
+    },
+    "smx_tech_pulse": {
+      "textures": "textures/items/tech_pulse"
+    },
+    "smx_threat_scanner": {
+      "textures": "textures/items/threat_scanner"
+    },
+    "smx_spider_manual": {
+      "textures": "textures/items/spider_manual"
+    },
+    "smx_suit_improvised": {
+      "textures": "textures/items/suit_improvised"
+    },
+    "smx_suit_classic": {
+      "textures": "textures/items/suit_classic"
+    },
+    "smx_suit_stealth": {
+      "textures": "textures/items/suit_stealth"
+    },
+    "smx_suit_advanced": {
+      "textures": "textures/items/suit_advanced"
+    },
+    "smx_suit_urban": {
+      "textures": "textures/items/suit_urban"
+    },
+    "smx_suit_iron": {
+      "textures": "textures/items/suit_iron"
+    },
+    "smx_egg_thug": {
+      "textures": "textures/items/eggs/egg_thug"
+    },
+    "smx_egg_gunner": {
+      "textures": "textures/items/eggs/egg_gunner"
+    },
+    "smx_egg_brute": {
+      "textures": "textures/items/eggs/egg_brute"
+    },
+    "smx_egg_shadow": {
+      "textures": "textures/items/eggs/egg_shadow"
+    },
+    "smx_egg_enforcer": {
+      "textures": "textures/items/eggs/egg_enforcer"
+    }
+  }
+}
